@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+ <!--注册定时执行任务实体-->
+ <bean id="lzstoneTimeTask" class="com.begin.TimeTask.LzstoneTimeTask"/>
+ <!--注册定时器信息-->
+ <bean id="taskInfo" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+ <!--第一次执行任务前需要等待的时间，这里设置为3秒-->
+ <property name="delay">
+ <value>1000</value>
+ </property>
+ <!--设置任务的执行周期 这里设置为4秒 2个小时-->
+ <property name="period">
+   <value>21500000</value>
+ </property>
+ <!--设置具体执行的任务 这里设置为lzstoneTimeTask-->
+ <property name="timerTask">
+ <ref local="lzstoneTimeTask"/>
+ </property>
+ </bean>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!--配置定时器任务的调度器-->
+ <bean id="timerFactory" class="org.springframework.scheduling.timer.TimerFactoryBean">
+ <!--注册定时器列表-->
+ <property name="scheduledTimerTasks">
+     <list>
+         <ref local="taskInfo"/>
+     </list>
+ </property>
+ </bean>
+ 
+ </beans>
+

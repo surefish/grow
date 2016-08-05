@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-sysAction" namespace="/sysAction" extends="new-base">
+  
+     
+         <!--列表 --> 
+        <action  name="listSysAction" method="listSysAction" class="com.begin.action.system.SystemAction" >
+       <result name="success">/WEB-INF/system/sysaction/list.jsp</result>  
+       </action>
+       
+         <!--去添加页面--> 
+        <action  name="goAddAction" method="goAddAction" class="com.begin.action.system.SystemAction" >
+       <result name="success">/WEB-INF/system/sysaction/edit.jsp</result>
+      </action>
+         
+         <!--新增或修--> 
+        <action  name="createOrEditAction" method="createOrEditAction" class="com.begin.action.system.SystemAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listSysAction</param>
+			    <param name="namespsce">/sysAction</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteAction" method="deleteAction" class="com.begin.action.system.SystemAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listSysAction</param>
+			    <param name="namespsce">/sysAction</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getactionID" method="getactionID" class="com.begin.action.system.SystemAction">
+			<result name="success">/WEB-INF/system/sysaction/edit.jsp</result>
+		</action>
+		<!--action json--> 
+		 <action name="listSysJson" method="listSysJson" class="com.begin.action.system.SystemAction">
+			<result name="json">/WEB-INF/system/json.jsp</result>
+		</action>
+    </package>
+
+</struts>

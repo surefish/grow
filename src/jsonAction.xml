@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-json" namespace="/json" extends="new-base">
+  
+        <action name="MenuJson" method="MenuJson" class="com.begin.action.JsonAction">
+			<result name="json">/WEB-INF/system/json.jsp</result>
+		</action>
+		<action name="imgUpload" method="imgUpload" class="com.begin.action.ImgUploadAction">
+			
+		</action>
+		<!-- 创建书 -->
+		<action name="text" method="text" class="com.begin.action.web.TBookAction">
+		</action>
+		<!--创建选课-->
+		<action name="tcour" method="tcour" class="com.begin.action.web.TCourseAction">
+		</action>	
+		<!--相册类型-->
+		<action name="my" method="my" class="com.begin.action.web.TPhotoAction">	
+		</action>
+		<!--创建眼科 下的类别-->
+		<action name="test" method="test" class="com.begin.action.web.HealthClassRoom">	
+		</action>
+		<!--创建快乐下 3个类别-->
+		<action name="add" method="add" class="com.begin.action.web.TNewsClassAction">	
+		</action>
+    </package>
+
+</struts>

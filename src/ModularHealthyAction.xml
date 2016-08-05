@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-modularHealthy" namespace="/modularHealthy" extends="new-base">
+  <!-- interceptor-stack是一堆拦截器组成的一个拦截器栈。也可以当拦截器使用.
+	interceptor-ref是指定某个action使用哪一个拦截器，可以是一个interceptor,也可以是一个interceptor-stack。
+		-->
+        <!--列表--> 
+        <action  name="listTNews" method="listTNews" class="com.begin.action.mobile.ModularHealthyAction" >
+       <result name="success">/WEB-INF/mobile/healthy/list.jsp</result>
+       </action> 
+        <!--去添加页面--> 
+        <action  name="goAddTNews" method="goAddTNews" class="com.begin.action.mobile.ModularHealthyAction" >
+       <result name="success">/WEB-INF/mobile/healthy/edit.jsp</result>
+       </action>
+       <!--搜索--> 
+        <action  name="searchByname" method="searchByname" class="com.begin.action.mobile.ModularHealthyAction" >
+       <result name="success">/WEB-INF/mobile/healthy/list.jsp</result>
+       </action>
+       <!--新增或修改 --> 
+        <action  name="CreateOrEditTNews" method="CreateOrEditTNews" class="com.begin.action.mobile.ModularHealthyAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTNews</param>
+			    <param name="namespsce">/modularHealthy</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteTNews" method="deleteTNews" class="com.begin.action.mobile.ModularHealthyAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTNews</param>
+			    <param name="namespsce">/modularHealthy</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getTNewsID" method="getTNewsID" class="com.begin.action.mobile.ModularHealthyAction">
+			<result name="success">/WEB-INF/mobile/healthy/edit.jsp</result>
+		</action>
+		
+		<!--modHealthy--> 
+        <action name="modHealthy" method="modHealthy" class="com.begin.action.mobile.ModularHealthyAction"></action>
+		<!--modHealthy--> 
+        <action name="show" method="show" class="com.begin.action.mobile.TexerciseAction"></action>	
+		<!--插入运动数据--> 
+        <action name="insert" method="insert" class="com.begin.action.mobile.TexerciseAction"></action>
+        <!--显示今日运动--> 
+        <action name="showToday" method="showToday" class="com.begin.action.mobile.TexerciseAction"></action>
+        <!--显示今日运动百分比--> 
+        <action name="showTodayPercent" method="showTodayPercent" class="com.begin.action.mobile.TexerciseAction"></action>
+         <!--显示图表--> 
+        <action name="showAnalysis" method="showAnalysis" class="com.begin.action.mobile.TexerciseAction"></action>
+         <!--班级平均数/排名 --> 
+        <action name="ranking" method="ranking" class="com.begin.action.mobile.TexerciseAction"></action>
+    </package>
+
+</struts>

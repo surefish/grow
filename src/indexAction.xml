@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-index" namespace="/index" extends="new-base">
+    
+          <action name="GoOAuth2" method="GoOAuth2" class="com.begin.weiixn.action.OAuthAction">	
+		</action>
+		  <action name="GoOAuth" method="GoOAuth" class="com.begin.weiixn.action.OAuthAction">	
+		</action>
+        
+		<!--选课列表-->
+		<action name="showCourse" method="showCourse" class="com.begin.action.mobile.TCourseAction">	
+		</action>
+		<!--显示详情-->
+		<action name="showCourseinfo" method="showCourseinfo" class="com.begin.action.mobile.TCourseAction">	
+		</action>
+		<!--点击报名-->
+		<action name="apply" method="apply" class="com.begin.action.mobile.TCourseAction">	
+		</action>
+		<!--班级照片-->
+		<action name="showPhoto" method="showPhoto" class="com.begin.action.mobile.TPhotoAction">	
+		</action>
+		<!--个人照片-->
+		<action name="showPhotoGR" method="showPhotoGR" class="com.begin.action.mobile.TPhotoAction">	
+		</action>
+		<!--荣誉榜照片  -->
+		<action name="showPhotoRYB" method="showPhotoRYB" class="com.begin.action.mobile.TPhotoAction">	
+		</action>
+		<!--照片上传-->
+		<action name="uploadImg" method="uploadImg" class="com.begin.action.mobile.TPhotoAction">	
+		</action>
+		<!--照片删除-->
+		<action name="deletePhoto" method="deletePhoto" class="com.begin.action.mobile.TPhotoAction">	
+		</action>
+		<!--照片添加到班级-->
+		<action name="addClassPhoto" method="addClassPhoto" class="com.begin.action.mobile.TPhotoAction">	
+		</action>
+		<!--修改照片名-->
+		<action name="updatePhoto" method="updatePhoto" class="com.begin.action.mobile.TPhotoAction">	
+		</action>
+		<!--照片查看详情-->
+		<action name="imaInfo" method="imaInfo" class="com.begin.action.mobile.TPhotoAction">	
+		</action>
+		<!--*************************健康讲堂******************************-->
+		<!--主页-->
+		<action name="mclassHome" method="mclassHome" class="com.begin.action.mobile.HealthClassRoom">	
+		</action>
+		<!--眼科-->
+		<action name="eyes" method="eyes" class="com.begin.action.mobile.HealthClassRoom">	
+		</action>
+		<!--眼科详情-->
+		<action name="eyesInfo" method="eyesInfo" class="com.begin.action.mobile.HealthClassRoom">	
+		</action>
+		<!--赞-->
+		<action name="eyePraise" method="eyePraise" class="com.begin.action.mobile.HealthClassRoom">	
+		</action>
+		<!--不赞-->
+		<action name="eyePraisej" method="eyePraisej" class="com.begin.action.mobile.HealthClassRoom">	
+		</action>
+		<!--************************快乐3个版本************************************** -->
+		<!--名师讲学  学习分享  微课堂-->
+		<action name="modHappyMS" method="modHappyMS" class="com.begin.action.mobile.MSafetyClassAction">	
+		</action>
+		<!--名师讲学  学习分享  微课堂-->
+		<action name="modHappyMSinfo" method="modHappyMSinfo" class="com.begin.action.mobile.MSafetyClassAction">	
+		</action>
+		<!--*************************身高体重******************************-->
+		<!--添加身高-->
+		<action name="saveHeight" method="saveHeight" class="com.begin.action.mobile.MHeightWeightAction">	
+		</action>
+		<!--添加体重-->
+		<action name="saveWeight" method="saveWeight" class="com.begin.action.mobile.MHeightWeightAction">	
+		</action>
+		<!--查看学生历史身高-->
+		<action name="oldTHeight" method="oldTHeight" class="com.begin.action.mobile.MyinformationAction">	
+		</action>
+		<!--查看学生历史体重-->
+		<action name="oldTWeight" method="oldTWeight" class="com.begin.action.mobile.MyinformationAction">	
+		</action>
+		<!--*************************学生游客注册******************************-->
+	     <!--学生注册-->
+		<action name="mystzc" method="mystzc" class="com.begin.action.mobile.Touristsregister">	
+		</action>
+		 <!--游客注册-->
+		<action name="mytrzc" method="mytrzc" class="com.begin.action.mobile.Touristsregister">	
+		</action>
+		<!--*****************管理者账号添加******************-->
+		<!--管理者账号添加-->
+		<action name="myadd" method="myadd" class="com.begin.action.web.TAdministratorAction">	
+		</action>
+		<!--创建作业类别-->
+		<action name="addWorkType" method="addWorkType" class="com.begin.action.web.THomeWorkTypeAction">	
+		</action>
+		<!--管理者登录-->
+		<action name="login" method="login" class="com.begin.action.mobile.TadminLogin">	
+		</action>
+		<!--文字类作业保存-->
+		<action name="addHomeWorktext" method="addHomeWorktext" class="com.begin.action.mobile.THomeWorkAction">	
+		</action>
+		<!--照片类型作业保存-->
+		<action name="uploadImgst" method="uploadImgst" class="com.begin.action.mobile.THomeWorkAction">	
+		</action>
+		<!--学生查看今日作业-->
+		<action name="studLokWork" method="studLokWork" class="com.begin.action.mobile.THomeWorkAction">	
+		</action>
+		<!--学生查看今日作业xq-->
+		<action name="workInfo" method="workInfo" class="com.begin.action.mobile.THomeWorkAction">	
+		</action>
+    </package>
+
+</struts>

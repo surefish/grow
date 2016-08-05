@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-tclass" namespace="/tclass" extends="new-base">
+
+       
+        <action  name="listTClass" method="listTClass" class="com.begin.action.web.TClassAction" >
+       <result name="success">/WEB-INF/web/class/list.jsp</result>
+       </action> 
+       
+        <action  name="tclassJson" method="tclassJson" class="com.begin.action.web.TClassAction" >
+       <result name="json">/WEB-INF/system/json.jsp</result>
+       </action> 
+       
+       
+        <action  name="goTclassJson" method="goTclassJson" class="com.begin.action.web.TClassAction" >
+       <result name="json">/WEB-INF/system/json.jsp</result>
+       </action>
+        <!--去添加页面--> 
+        <action  name="goAddTClass" method="goAddTClass" class="com.begin.action.web.TClassAction" >
+       <result name="success">/WEB-INF/web/class/edit.jsp</result>
+       </action>
+       <!--搜索--> 
+        <action  name="searchByname" method="searchByname" class="com.begin.action.web.TClassAction" >
+       <result name="success">/WEB-INF/web/class/list.jsp</result>
+       </action>
+       <!--新增或修改 --> 
+        <action  name="createOrEditTClass" method="createOrEditTClass" class="com.begin.action.web.TClassAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTClass</param>
+			    <param name="namespsce">/tclass</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteTClass" method="deleteTClass" class="com.begin.action.web.TClassAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTClass</param>
+			    <param name="namespsce">/tclass</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getTClassID" method="getTClassID" class="com.begin.action.web.TClassAction">
+			<result name="success">/WEB-INF/web/class/edit.jsp</result>
+		</action>
+    </package>
+
+</struts>

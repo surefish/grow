@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-tstudenthealthy" namespace="/tstudenthealthy" extends="new-base">
+  
+		
+        <!--信息管理-学生健康数据--> 
+        <action  name="listTStudent" method="listTStudent" class="com.begin.action.web.TStudentHealthyAction" >
+       <result name="success">/WEB-INF/web/studenthealthy/listhealth.jsp</result>
+       </action> 
+        <!--信息管理-学生健康数据--> 
+        <action  name="liststHealthJson" method="liststHealthJson" class="com.begin.action.web.TStudentHealthyAction" >
+      <result name="json">/WEB-INF/system/json.jsp</result>
+       </action> 
+       <!--新增或修改 --> 
+        <action  name="createOrEditTStudent" method="createOrEditTStudent" class="com.begin.action.web.TStudentHealthyAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTStudent</param>
+			    <param name="namespsce">/tstudenthealthy</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteTStudent" method="deleteTStudent" class="com.begin.action.web.TStudentHealthyAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTStudent</param>
+			    <param name="namespsce">/tstudenthealthy</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getTStudentID" method="getTStudentID" class="com.begin.action.web.TStudentHealthyAction">
+			<result name="success">/WEB-INF/web/studenthealthy/edithealth.jsp</result>
+		</action>
+		
+        
+      </package>
+</struts>

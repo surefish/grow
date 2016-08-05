@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+     <!-- 健康标准 -->
+    <package name="new-thealthstd" namespace="/thealthstd" extends="new-base">
+  
+  
+  
+        <action  name="listTHealthStd" method="listTHealthStd" class="com.begin.action.web.THealthStdAction" >
+       <result name="success">/WEB-INF/web/thealthstd/list.jsp</result>
+       </action>  
+       
+        <action  name="tHealthStdJson" method="tHealthStdJson" class="com.begin.action.web.THealthStdAction" >
+       <result name="json">/WEB-INF/system/json.jsp</result>
+       </action> 
+        <!--去添加页面--> 
+        <action  name="goAddTHealthStd" method="goAddTHealthStd" class="com.begin.action.web.THealthStdAction" >
+       <result name="success">/WEB-INF/web/thealthstd/edit.jsp</result>
+       </action>
+     
+       <!--新增或修改 --> 
+        <action  name="createOrEditTHealthStd" method="createOrEditTHealthStd" class="com.begin.action.web.THealthStdAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTHealthStd</param>
+			    <param name="namespsce">/thealthstd</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteTHealthStd" method="deleteTHealthStd" class="com.begin.action.web.THealthStdAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTHealthStd</param>
+			    <param name="namespsce">/thealthstd</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getHealthID" method="getHealthID" class="com.begin.action.web.THealthStdAction">
+			 <result name="success">/WEB-INF/web/thealthstd/edit.jsp</result>
+		</action>
+    </package>
+
+</struts>

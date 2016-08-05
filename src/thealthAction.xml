@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-thealth" namespace="/thealth" extends="new-base">
+  <!-- interceptor-stack是一堆拦截器组成的一个拦截器栈。也可以当拦截器使用.
+	interceptor-ref是指定某个action使用哪一个拦截器，可以是一个interceptor,也可以是一个interceptor-stack。
+		-->
+        <!--学生健康查询--> 
+        <action  name="listTStudent" method="listTStudent" class="com.begin.action.web.TStudentSearchAction" >
+       <result name="success">/WEB-INF/web/studentsearch/listhealth.jsp</result>
+       </action> 
+       
+         <!--去查看--> 
+        <action name="getTStudentID" method="getTStudentID" class="com.begin.action.web.THealthyAction">
+			<result name="success">/WEB-INF/web/studentsearch/edithealth.jsp</result>
+		</action>
+		
+      </package>
+</struts>

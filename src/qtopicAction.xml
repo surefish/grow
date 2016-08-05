@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-qTopic" namespace="/qTopic" extends="new-base">
+  <!-- interceptor-stack是一堆拦截器组成的一个拦截器栈。也可以当拦截器使用.
+	interceptor-ref是指定某个action使用哪一个拦截器，可以是一个interceptor,也可以是一个interceptor-stack。
+		-->
+        <!--列表--> 
+        <action  name="listTopic" method="listTopic" class="com.begin.action.web.QTopicAction" >
+       <result name="success">/WEB-INF/web/qsurvey/listtopic.jsp</result>
+       </action> 
+        <!--去添加页面--> 
+        <action  name="goAddTopic" method="goAddTopic" class="com.begin.action.web.QTopicAction" >
+       <result name="success">/WEB-INF/web/qsurvey/editttopic.jsp</result>
+       </action>
+      
+    
+       <!--新增或修改 --> 
+        <action  name="createOrEditTopic" method="createOrEditTopic" class="com.begin.action.web.QTopicAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTopic</param>
+			    <param name="namespsce">/qTopic</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteTopic" method="deleteTopic" class="com.begin.action.web.QTopicAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTopic</param>
+			    <param name="namespsce">/qTopic</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getTTopicID" method="getTTopicID" class="com.begin.action.web.QTopicAction">
+			<result name="success">/WEB-INF/web/qsurvey/editttopic.jsp</result>
+		</action>
+		<!--去选项管理--> 
+        <action name="goItem" method="goItem" class="com.begin.action.web.QTopicAction">
+			<result name="success">/WEB-INF/web/qitem/list.jsp</result>
+			<interceptor-ref name="auth"></interceptor-ref>
+			<interceptor-ref name="crudStack"></interceptor-ref>
+		</action>
+		
+    </package>
+
+</struts>

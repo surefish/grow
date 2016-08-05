@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="baseDAO" class="com.begin.dao.impl.BaseDAOImpl" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	
+	<bean id="accountDAO" class="com.begin.dao.impl.TAccountDAOImpl" parent="baseDAO"/>
+	
+	<bean id="sysActionDAO" class="com.begin.dao.impl.SysActionDAOImpl" parent="baseDAO"/>
+	<bean id="sysLogDAO" class="com.begin.dao.impl.SysLogDAOImpl" parent="baseDAO"/>
+	<bean id="sysMenuDAO" class="com.begin.dao.impl.SysMenuDAOImpl" parent="baseDAO"/>
+	<bean id="sysOrgDAO" class="com.begin.dao.impl.SysOrgDAOImpl" parent="baseDAO"/>
+	<bean id="sysRoleDAO" class="com.begin.dao.impl.SysRoleDAOImpl" parent="baseDAO"/>
+	<bean id="sysUserDAO" class="com.begin.dao.impl.SysUserDAOImpl" parent="baseDAO"/>
+	
+	<bean id="tSchoolDAO" class="com.begin.dao.impl.TSchoolDAOImpl" parent="baseDAO"/>
+	<bean id="tHospitalDAO" class="com.begin.dao.impl.THospitalDAOImpl" parent="baseDAO"/>
+	<bean id="tDoctorDAO" class="com.begin.dao.impl.TDoctorDAOImpl" parent="baseDAO"/>
+	<bean id="tClassDAO" class="com.begin.dao.impl.TClassDAOImpl" parent="baseDAO"/>
+	<bean id="tTeacherDAO" class="com.begin.dao.impl.TTeacherDAOImpl" parent="baseDAO"/>
+	<bean id="tNewsDAO" class="com.begin.dao.impl.TNewsDAOImpl" parent="baseDAO"/>
+	<bean id="tMessagesDAO" class="com.begin.dao.impl.TMessagesDAOImpl" parent="baseDAO"/>
+	<bean id="tMessagesStudentDAO" class="com.begin.dao.impl.TMessagesStudentDAOImpl" parent="baseDAO"/>
+	<bean id="tStudentDAO" class="com.begin.dao.impl.TStudentDAOImpl" parent="baseDAO"/>
+	<bean id="qSurveyDAO" class="com.begin.dao.impl.QSurveyDAOImpl" parent="baseDAO"/>
+	<bean id="qItemDAO" class="com.begin.dao.impl.QItemDAOImpl" parent="baseDAO"/>
+	<bean id="qTopicDAO" class="com.begin.dao.impl.QTopicDAOImpl" parent="baseDAO"/>
+	<bean id="tHealthyDAO" class="com.begin.dao.impl.THealthyDAOImpl" parent="baseDAO"/>
+	<bean id="tHealthStdDAO" class="com.begin.dao.impl.THealthStdDAOImpl" parent="baseDAO"/>
+	<bean id="tStudentIPDAO" class="com.begin.dao.impl.TStudentIPDAOImpl" parent="baseDAO"/>
+	<bean id="qValueDAO" class="com.begin.dao.impl.QValueDAOImpl" parent="baseDAO"/>
+	<bean id="qSurveyStudentDAO" class="com.begin.dao.impl.QSurveyStudentDAOImpl" parent="baseDAO"/>
+	<bean id="tBookDAO" class="com.begin.dao.impl.TBookDAOImpl" parent="baseDAO"/>
+	<bean id="tBookStoreDAO" class="com.begin.dao.impl.TBookStoreDAOImpl" parent="baseDAO"/>
+	<bean id="tBookTypeDAO" class="com.begin.dao.impl.TBookTypeDAOImpl" parent="baseDAO"/>
+	<bean id="tExerciseDAO" class="com.begin.dao.impl.TExerciseDAOImpl" parent="baseDAO"/>
+	<bean id="tExerciseStandardDAO" class="com.begin.dao.impl.TExerciseStandardDAOImpl" parent="baseDAO"/>
+	<bean id="tAverageDAO" class="com.begin.dao.impl.TAverageDAOImpl" parent="baseDAO"/>
+	<bean id="tCourseDAO" class="com.begin.dao.impl.TCourseDAOImpl" parent="baseDAO"/>
+	<bean id="tCourseApplyDAO" class="com.begin.dao.impl.TCourseApplyDAOImpl" parent="baseDAO"/>
+	<bean id="tPhotoDAO" class="com.begin.dao.impl.TPhotoDAOImpl" parent="baseDAO"/>
+	<bean id="tPhotoTypeDAO" class="com.begin.dao.impl.TPhotoTypeDAOImpl" parent="baseDAO"/>
+	<bean id="tLogDAO" class="com.begin.dao.impl.TLogDAOImpl" parent="baseDAO"/>
+	<bean id="tNewsClassDAO" class="com.begin.dao.impl.TNewsClassDAOImpl" parent="baseDAO"/>
+	<bean id="tNewsPraiseDAO" class="com.begin.dao.impl.TNewsPraiseDAOImpl" parent="baseDAO"/>
+	<bean id="tHeightDAO" class="com.begin.dao.impl.THeightDAOImpl" parent="baseDAO"/>
+	<bean id="tWeightDAO" class="com.begin.dao.impl.TWeightDAOImpl" parent="baseDAO"/>
+	<bean id="tAdministratorDAO" class="com.begin.dao.impl.TAdministratorDAOImpl" parent="baseDAO"/>
+	<bean id="tHomeWorkDAO" class="com.begin.dao.impl.THomeWorkDAOImpl" parent="baseDAO"/>
+	<bean id="tHomeWorkTypeDAO" class="com.begin.dao.impl.THomeWorkTypeDAOImpl" parent="baseDAO"/>
+	<bean id="tGradeDAO" class="com.begin.dao.impl.TGradeDAOImpl" parent="baseDAO"/>
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+<package name="new-phone" namespace="/phone" extends="struts-default">
+         <!--学生家长登录 -->
+		 <action name="login" method="login" class="com.begin.action.mobile.TstudentLoginAction"></action>
+		  <!--异地登录 -->
+		 <action name="allopatry" method="allopatry" class="com.begin.action.mobile.TstudentLoginAction"></action>
+		  <!--条形码-->
+		 <action name="getBarcode" method="getBarcode" class="com.begin.action.mobile.TstudentLoginAction"></action>
+		  <!--消息接收-->
+		 <action name="getMsByStud" method="getMsByStud" class="com.begin.action.mobile.TstudentLoginAction"></action>
+		  <!--新消息提醒-->
+		 <action name="getMsNewByStud" method="getMsNewByStud" class="com.begin.action.mobile.TstudentLoginAction"></action>
+		   <!--意见反馈-->
+		 <action name="getYJFK" method="getYJFK" class="com.begin.action.mobile.TstudentLoginAction"></action>
+		  <!--获取版本号-->
+		 <action name="version" method="version" class="com.begin.action.mobile.TstudentLoginAction"></action>
+		 
+</package>
+</struts>

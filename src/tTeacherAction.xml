@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-teacher" namespace="/teacher" extends="new-base">
+  <!-- interceptor-stack是一堆拦截器组成的一个拦截器栈。也可以当拦截器使用.
+	interceptor-ref是指定某个action使用哪一个拦截器，可以是一个interceptor,也可以是一个interceptor-stack。
+		-->
+        <!--列表--> 
+        <action  name="listTeacher" method="listTeacher" class="com.begin.action.web.TTeacherAction" >
+       <result name="success">/WEB-INF/web/teacher/list.jsp</result>
+       </action> 
+        <!--列表--> 
+        <action  name="listTeacherJson" method="listTeacherJson" class="com.begin.action.web.TTeacherAction" >
+       <result name="json">/WEB-INF/system/json.jsp</result>
+       </action> 
+           
+        <action  name="goclassJson" method="goclassJson" class="com.begin.action.web.TTeacherAction" >
+       <result name="json">/WEB-INF/system/json.jsp</result>
+       </action>
+        <!--去添加页面--> 
+        <action  name="goAddTeacher" method="goAddTeacher" class="com.begin.action.web.TTeacherAction" >
+       <result name="success">/WEB-INF/web/teacher/edit.jsp</result>
+       </action>
+    
+       <!--新增或修改 --> 
+        <action  name="createOrEditTeacher" method="createOrEditTeacher" class="com.begin.action.web.TTeacherAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTeacher</param>
+			    <param name="namespsce">/teacher</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteTeacher" method="deleteTeacher" class="com.begin.action.web.TTeacherAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTeacher</param>
+			    <param name="namespsce">/teacher</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getTeacherID" method="getTeacherID" class="com.begin.action.web.TTeacherAction">
+			<result name="success">/WEB-INF/web/teacher/edit.jsp</result>
+		</action>
+    </package>
+
+</struts>

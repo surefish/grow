@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/tx 
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<!-- 阿里 druid 数据库连接池 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<!-- 数据库基本信息配置 -->
+		<property name="url" value="jdbc:sqlserver://114.55.60.21:1433;database=begin;integratedSecurity=false" />
+		<property name="username" value="sa" />
+		<property name="password" value="xqd2016!" />
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<!-- 最大并发连接数 -->
+		<property name="maxActive" value="20" />
+		<!-- 初始化连接数量 -->
+		<property name="initialSize" value="1" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 最小空闲连接数 -->
+		<property name="minIdle" value="10" />
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<!-- 打开 removeAbandoned 功能 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 1800 秒，也就是 30 分钟 -->
+		<property name="removeAbandonedTimeout" value="1800" />
+		<!-- 关闭 abanded 连接时输出错误日志 -->
+		<property name="logAbandoned" value="true" />
+	</bean>
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+
+		<property name="hibernateProperties">
+			<props>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop> -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.connection.release_mode">auto</prop>
+				<prop key="hibernate.autoReconnect">true</prop>
+				<prop key="cache.use_query_cache">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+			<value>com.begin.bean.SysAction</value>
+			<value>com.begin.bean.SysLog</value>
+			<value>com.begin.bean.SysMenu</value>
+			<value>com.begin.bean.SysOrg</value>
+			<value>com.begin.bean.SysRole</value>
+			<value>com.begin.bean.SysUser</value>
+			<value>com.begin.bean.TAccount</value>
+			<value>com.begin.bean.BaseEntity</value>
+			<value>com.begin.bean.StatusEntity</value>
+			<value>com.begin.bean.QSurvey</value>
+			<value>com.begin.bean.QTopic</value>
+			<value>com.begin.bean.QItem</value>
+			<value>com.begin.bean.QSurveyTopic</value>
+			<value>com.begin.bean.QValue</value>
+			<value>com.begin.bean.TClass</value>
+			<value>com.begin.bean.TSchool</value>
+			<value>com.begin.bean.TStudent</value>
+			<value>com.begin.bean.TTeacher</value>
+			<value>com.begin.bean.TDoctor</value>
+			<value>com.begin.bean.THospital</value>
+			<value>com.begin.bean.THealthy</value>
+			<value>com.begin.bean.TDiary</value>
+			<value>com.begin.bean.TTalk</value>
+			<value>com.begin.bean.TExercise</value>
+			<value>com.begin.bean.QStudentSurvey</value>
+			<value>com.begin.bean.TAverage</value>
+			<value>com.begin.bean.TExerciseStandard</value>
+			<value>com.begin.bean.THealthStd</value>
+			<value>com.begin.bean.TNews</value>
+			<value>com.begin.bean.TMessages</value>
+			<value>com.begin.bean.TMessagesStudent</value>
+			<value>com.begin.bean.TStudentIP</value>
+			<value>com.begin.bean.QSurveyStudent</value>
+			<value>com.begin.bean.TBookStore</value>
+			<value>com.begin.bean.TBook</value>
+			<value>com.begin.bean.TBookType</value>
+			<value>com.begin.bean.TCourse</value>
+			<value>com.begin.bean.TCourseApply</value>
+			<value>com.begin.bean.TPhoto</value>
+			<value>com.begin.bean.TPhotoType</value>
+			<value>com.begin.bean.TLog</value>
+			<value>com.begin.bean.TNewsClass</value>
+			<value>com.begin.bean.Tcongfig</value>
+			<value>com.begin.bean.TNewsPraise</value>
+			<value>com.begin.bean.THeight</value>
+			<value>com.begin.bean.TWeight</value>
+			<value>com.begin.bean.TAdministrator</value>
+			<value>com.begin.bean.THomeWork</value>
+			<value>com.begin.bean.THomeWorkType</value>
+			<value>com.begin.bean.TGrade</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 事务 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 使用annotation定义事务,通过注解配置了事务，就可以在java类中配置 @Transactional(propagation 
+		= Propagation.REQUIRED)，也可以为单个方法配置 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+</beans>

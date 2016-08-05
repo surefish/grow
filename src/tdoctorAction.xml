@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-tdoctor" namespace="/doctor" extends="new-base">
+ 
+        <!--列表--> 
+        <action  name="listTDoctor" method="listTDoctor" class="com.begin.action.web.TDoctorAction">
+       <result name="success">/WEB-INF/web/doctor/list.jsp</result>
+       </action> 
+      <!--列表-json--> 
+        <action  name="listTDoctorJson" method="listTDoctorJson" class="com.begin.action.web.TDoctorAction">
+      <result name="json">/WEB-INF/system/json.jsp</result>
+       </action> 
+       <!-- doctor json--> 
+        <action  name="goDoctorJson" method="goDoctorJson" class="com.begin.action.web.TDoctorAction">
+      <result name="json">/WEB-INF/system/json.jsp</result>
+       </action> 
+        <!--去添加页面--> 
+        <action  name="goAddTDoctor" method="goAddTDoctor" class="com.begin.action.web.TDoctorAction" >
+       <result name="success">/WEB-INF/web/doctor/edit.jsp</result>
+       </action>
+       <!--搜索--> 
+        <action  name="searchByname" method="searchByname" class="com.begin.action.web.TDoctorAction" >
+       <result name="success">/WEB-INF/web/doctor/list.jsp</result>
+       </action>
+       <!--新增或修改 --> 
+        <action  name="createOrEditTDoctor" method="createOrEditTDoctor" class="com.begin.action.web.TDoctorAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTDoctor</param>
+			    <param name="namespsce">/doctor</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteTDoctorID" method="deleteTDoctorID" class="com.begin.action.web.TDoctorAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTDoctor</param>
+			    <param name="namespsce">/doctor</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getTDoctorID" method="getTDoctorID" class="com.begin.action.web.TDoctorAction">
+			<result name="success">/WEB-INF/web/doctor/edit.jsp</result>
+		</action>
+
+       
+    </package>
+
+</struts>

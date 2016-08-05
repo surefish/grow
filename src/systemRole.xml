@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-sysRole" namespace="/sysRole" extends="new-base">
+  
+     
+         <!--角色列表 --> 
+        <action  name="listSysRole" method="listSysRole" class="com.begin.action.system.SystemRole" >
+       <result name="success">/WEB-INF/system/sysrole/list.jsp</result>  
+       </action>
+       
+         <!--去添加页面--> 
+        <action  name="goAddRole" method="goAddRole" class="com.begin.action.system.SystemRole" >
+       <result name="success">/WEB-INF/system/sysrole/edit.jsp</result>
+      </action>
+         
+         <!--新增或修改角色 --> 
+        <action  name="createOrEditRole" method="createOrEditRole" class="com.begin.action.system.SystemRole" >
+         <result type="redirectAction">
+			    <param name="actionName">listSysRole</param>
+			    <param name="namespsce">/sysRole</param>
+			</result>
+         </action>
+        
+          <!--删除角色和角色有的菜单 --> 
+        <action  name="deleteMenuByRole" method="deleteMenuByRole" class="com.begin.action.system.SystemRole" >
+         <result type="redirectAction">
+			    <param name="actionName">listSysRole</param>
+			    <param name="namespsce">/sysRole</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getRoleID" method="getRoleID" class="com.begin.action.system.SystemRole">
+			<result name="success">/WEB-INF/system/sysrole/edit.jsp</result>
+		</action>
+		 <!--角色列表 JSON--> 
+        <action  name="listSysRoleJson" method="listSysRoleJson" class="com.begin.action.system.SystemRole" >
+      <result name="json">/WEB-INF/system/json.jsp</result>
+       </action>
+        <!-- 角色所拥有的菜单 -->
+		<action  name="roleMenuJson" method="roleMenuJson" class="com.begin.action.system.SystemRole" >
+      <result name="json">/WEB-INF/system/json.jsp</result>
+       </action>
+ </package>
+
+</struts>

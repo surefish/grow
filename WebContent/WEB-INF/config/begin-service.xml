@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+">
+	<bean id="baseService" class="com.begin.service.impl.BaseServiceImpl" abstract="true" autowire="byName">
+		<property name="baseDAO" ref="baseDAO"/>
+	</bean>
+	 <bean id="sysUserService" class="com.begin.service.impl.SysUserServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="sysUserDAO"/>
+    </bean>
+    
+	<bean id="accountService" class="com.begin.service.impl.TAccountServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="accountDAO"/>
+		</bean>
+	<bean id="sysActionService" class="com.begin.service.impl.SysActionServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="sysActionDAO"/>	
+    </bean>
+	
+	<bean id="sysLogService" class="com.begin.service.impl.SysLogServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="sysLogDAO"/>	
+    </bean>
+	
+	<bean id="sysMenuService" class="com.begin.service.impl.SysMenuServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="sysMenuDAO"/>
+    </bean>
+    
+	<bean id="sysOrgService" class="com.begin.service.impl.SysOrgServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="sysOrgDAO"/>
+    </bean>
+    
+    <bean id="sysRoleService" class="com.begin.service.impl.SysRoleServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="sysRoleDAO"/>
+    </bean>
+    
+   
+    
+    
+    
+     <bean id="tSchoolService" class="com.begin.service.impl.TSchoolServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tSchoolDAO"/>
+    </bean>
+     <bean id="tHospitalService" class="com.begin.service.impl.THospitalServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tHospitalDAO"/>
+    </bean>
+    <bean id="tDoctorService" class="com.begin.service.impl.TDoctorServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tDoctorDAO"/>
+    </bean>
+    <bean id="tClassService" class="com.begin.service.impl.TClassServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tClassDAO"/>
+    </bean>
+     <bean id="tTeacherService" class="com.begin.service.impl.TTeacherServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tTeacherDAO"/>
+    </bean>
+     <bean id="tNewsService" class="com.begin.service.impl.TNewsServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tNewsDAO"/>
+    </bean>
+    <bean id="tMessagesService" class="com.begin.service.impl.TMessagesServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tMessagesDAO"/>
+    </bean>
+    <bean id="tMessagesStudentService" class="com.begin.service.impl.TMessagesStudentServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tMessagesStudentDAO"/>
+    </bean>
+     <bean id="tStudentService" class="com.begin.service.impl.TStudentServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tStudentDAO"/>
+    </bean>
+    <bean id="qSurveyService" class="com.begin.service.impl.QSurveyServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="qSurveyDAO"/>
+    </bean>
+    <bean id="qItemService" class="com.begin.service.impl.QItemServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="qItemDAO"/>
+    </bean>
+    <bean id="qTopicService" class="com.begin.service.impl.QTopicServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="qTopicDAO"/>
+    </bean>
+    <bean id="tHealthyService" class="com.begin.service.impl.THealthyServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tHealthyDAO"/>
+    </bean>
+    <bean id="tHealthStdService" class="com.begin.service.impl.THealthStdServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tHealthStdDAO"/>
+    </bean>
+    
+     <bean id="tStudentIPService" class="com.begin.service.impl.TStudentIPServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tStudentIPDAO"/>
+    </bean>
+      <bean id="qValueService" class="com.begin.service.impl.QValueServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="qValueDAO"/>
+    </bean>
+     <bean id="qSurveyStudentService" class="com.begin.service.impl.QSurveyStudentServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="qSurveyStudentDAO"/>
+    </bean>
+     <bean id="tBookService" class="com.begin.service.impl.TBookServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tBookDAO"/>
+    </bean>
+     <bean id="tBookStoreService" class="com.begin.service.impl.TBookStoreServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tBookStoreDAO"/>
+    </bean>
+    <bean id="tBookTypeService" class="com.begin.service.impl.TBookTypeServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tBookTypeDAO"/>
+    </bean>
+    <bean id="tExerciseService" class="com.begin.service.impl.TExerciseServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tExerciseDAO"/>
+    </bean>
+     <bean id="tExerciseStandardService" class="com.begin.service.impl.TExerciseStandardServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tExerciseStandardDAO"/>
+    </bean>
+    <bean id="tAverageService" class="com.begin.service.impl.TAverageServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tAverageDAO"/>
+    </bean>
+    <bean id="tCourseService" class="com.begin.service.impl.TCourseServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tCourseDAO"/>
+    </bean>
+    <bean id="tCourseApplyService" class="com.begin.service.impl.TCourseApplyServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tCourseApplyDAO"/>
+    </bean>
+    <bean id="tPhotoService" class="com.begin.service.impl.TPhotoServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tPhotoDAO"/>
+    </bean>
+    <bean id="tPhotoTypeService" class="com.begin.service.impl.TPhotoTypeServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tPhotoTypeDAO"/>
+    </bean>
+    <bean id="tLogService" class="com.begin.service.impl.TLogServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tLogDAO"/>
+    </bean>
+     <bean id="tNewsClassService" class="com.begin.service.impl.TNewsClassServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tNewsClassDAO"/>
+    </bean>
+     <bean id="tNewsPraiseService" class="com.begin.service.impl.TNewsPraiseServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tNewsPraiseDAO"/>
+    </bean>
+    <bean id="tHeightService" class="com.begin.service.impl.THeightServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tHeightDAO"/>
+    </bean>
+     <bean id="tWeightService" class="com.begin.service.impl.TWeightServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tWeightDAO"/>
+    </bean>
+     <bean id="tAdministratorService" class="com.begin.service.impl.TAdministratorServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tAdministratorDAO"/>
+    </bean>
+    <bean id="tHomeWorkService" class="com.begin.service.impl.THomeWorkServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tHomeWorkDAO"/>
+    </bean>
+    <bean id="tHomeWorkTypeService" class="com.begin.service.impl.THomeWorkTypeServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tHomeWorkTypeDAO"/>
+    </bean>
+     <bean id="tGradeService" class="com.begin.service.impl.TGradeServiceImpl" parent="baseService" autowire="byName">
+		<property name="baseDAO" ref="tGradeDAO"/>
+    </bean>
+</beans>

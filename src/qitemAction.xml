@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-qitem" namespace="/qitem" extends="new-base">
+  
+        <!--列表--> 
+        <action  name="listQItem" method="listQItem" class="com.begin.action.web.QItemAction" >
+       <result name="success">/WEB-INF/web/qitem/list.jsp</result>
+       </action> 
+        <!--去添加页面--> 
+        <action  name="goAddQItem" method="goAddQItem" class="com.begin.action.web.QItemAction" >
+       <result name="success">/WEB-INF/web/qitem/edit.jsp</result>
+       </action>
+     
+       <!--新增或修改 --> 
+        <action  name="createOrEditQItem" method="createOrEditQItem" class="com.begin.action.web.QItemAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listQItem</param>
+			    <param name="namespsce">/qitem</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteQItem" method="deleteQItem" class="com.begin.action.web.QItemAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listQItem</param>
+			    <param name="namespsce">/qitem</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getQItemID" method="getQItemID" class="com.begin.action.web.QItemAction">
+			<result name="success">/WEB-INF/web/qitem/edit.jsp</result>
+		</action>
+		 <!--调查选项管理--> 
+        <action  name="listsurvey" method="listsurvey" class="com.begin.action.web.QItemAction" >
+       <result name="success">/WEB-INF/web/qitem/listsurvey.jsp</result>
+       </action> 
+		
+		
+    </package>
+
+</struts>

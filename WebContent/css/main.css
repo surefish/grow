@@ -1,0 +1,60 @@
+a{ color:Black; text-decoration:none;}
+
+.north{
+	overflow:hidden; 
+	height:68px; 
+	line-height:20px;
+	color:#000;
+	/*background-image: url(../img/head_bg.png);*/
+	background-repeat: repeat-x;
+	
+	background-color:#fff;
+}
+.headLeft{position: absolute; font-size: 16px; }
+.headRight{position: absolute;top:48px;right:10px;}
+.headRight div{float:left;}
+.headRight div i.userIcon{float:left;margin:2px;width:16px;height:16px;background:url(../img/user.png) no-repeat;}
+.headRight div i.buildIcon{float:left;margin:2px;width:16px;height:16px;background:url(../img/building.png) no-repeat;}
+.headRight div i.msgIcon{float:left;margin:2px;width:16px;height:16px;background:url(../img/email.png) no-repeat;}
+.headRight div i.pwdIcon{float:left;margin:2px;width:16px;height:16px;background:url(../img/key.png) no-repeat;}
+.headRight div i.exitIcon{float:left;margin:2px;width:16px;height:16px;background:url(../img/door_in.png) no-repeat;}
+.headRight .pipe{margin:0 5px;color:#aaa;}
+.headRight a{color:#000;text-decoration:none;}
+.headRight b{color:red;margin-left:5px;margin-right:5px;}
+
+.south{height:30px;background:#D2E0F2;}
+.footer{text-align:center;color:#15428B;margin:3px 0 0 0;padding:0;line-height:23px;font-weight:bold;}
+
+.easyui-accordion ul{list-style-type:none;margin:0px;display:inline;}
+.easyui-accordion ul li{ padding:0px;}
+.easyui-accordion ul li a{line-height:24px; height:24px;}
+.easyui-accordion ul li{margin:2px 6px;padding-left:10px;padding-top:2px;}
+.easyui-accordion ul li a i{display:block;float:left;width:16px;height:16px;padding:4px 2px 2px 2px;}
+.easyui-accordion ul li.hover{border:1px dashed #99BBE8;background:#E0ECFF;cursor:pointer;}
+.easyui-accordion ul li.hover a{color:#416AA3;}
+.easyui-accordion ul li.selected{border:1px solid #99BBE8;background:#E0ECFF;cursor:default;}
+.easyui-accordion ul li.selected a{color:#416AA3;font-weight:bold;}
+
+.easyui-accordion .panel-title{font-weight:normal;}
+/*
+.accordion .accordion-header-selected{background:#9FCFFF;}
+*/
+.accordion .accordion-header-selected .panel-title{font-weight:bold;}
+
+.noticeDiv{margin:10px;font-size:14px;line-height:1.6;line-height:1.5;}
+.noticeDiv .title{padding-left: 15px;width:150px;line-height:21px;font-weight:bold;color:#494949;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.noticeDiv .content{
+border-width: 0 0 1px 0;
+border-style: dotted;
+padding-left: 10px;
+margin-left: 5px;
+}
+
+.northDiv{float:left;width:97%;height:180px;margin:5px 2px 5px 7px;}
+.southDiv{float:left;width:97%;height:180px;margin:5px 0 5px 5px;overflow-y:auto;}
+.southDiv .list{margin:0;}
+.southDiv ul.listShow li .title{font-weight:bold;font-size:large; width:300px;}
+.southDiv ul.listShow li label{text-align:left;width:60px;height:18px;font-weight:normal;}
+.southDiv ul.listShow li a{color:blue;}
+.southDiv ul.listShow li.small{min-width:200px;}
+.southDiv ul.listShow li .listli{min-height:18px;overflow:hidden;padding-top:4px;word-wrap: break-word;}

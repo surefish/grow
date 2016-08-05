@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-tstudent" namespace="/tstudent" extends="new-base">
+  <!-- interceptor-stack是一堆拦截器组成的一个拦截器栈。也可以当拦截器使用.
+	interceptor-ref是指定某个action使用哪一个拦截器，可以是一个interceptor,也可以是一个interceptor-stack。
+		-->
+        <!--列表--> 
+        <action  name="listTStudent" method="listTStudent" class="com.begin.action.web.TStudentAction" >
+       <result name="success">/WEB-INF/web/student/list.jsp</result>
+       </action> 
+       <!--列表--> 
+        <action  name="listTStudentJson" method="listTStudentJson" class="com.begin.action.web.TStudentAction" >
+        <result name="json">/WEB-INF/system/json.jsp</result>
+       </action> 
+       <!--Tclass json--> 
+        <action  name="goTclassJson" method="goTclassJson" class="com.begin.action.web.TStudentAction" >
+        <result name="json">/WEB-INF/system/json.jsp</result>
+       </action> 
+        <!--去添加页面--> 
+        <action  name="goAddTStudent" method="goAddTStudent" class="com.begin.action.web.TStudentAction" >
+       <result name="success">/WEB-INF/web/student/edit.jsp</result>
+       </action>
+       <!--新增或修改 --> 
+        <action  name="createOrEditTStudent" method="createOrEditTStudent" class="com.begin.action.web.TStudentAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTStudent</param>
+			    <param name="namespsce">/tstudent</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteTStudent" method="deleteTStudent" class="com.begin.action.web.TStudentAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTStudent</param>
+			    <param name="namespsce">/tstudent</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getTStudentID" method="getTStudentID" class="com.begin.action.web.TStudentAction">
+			<result name="success">/WEB-INF/web/student/edit.jsp</result>
+		</action>
+		
+		<!--转出 --> 
+        <action  name="rollout" method="rollout" class="com.begin.action.web.TStudentAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTStudent</param>
+			    <param name="namespsce">/tstudent</param>
+			</result>
+         </action>
+		
+    </package>
+
+</struts>

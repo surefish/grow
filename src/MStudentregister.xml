@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+<package name="new-stdreg" namespace="/stdreg" extends="new-base">
+         <!--学生家长登录 -->
+		 <action name="myReg" method="myReg" class="com.begin.action.mobile.Studentregister"></action>
+         <!--学生注册-->
+         <action name="myRegzc" method="myRegzc" class="com.begin.action.mobile.Studentregister"></action>
+          <!--学生改密码-->
+         <action name="updatePwd" method="updatePwd" class="com.begin.action.mobile.Studentregister"></action>
+          <!--学生验证码-->
+         <action name="stuAddEmail" method="stuAddEmail" class="com.begin.action.mobile.Studentregister"></action>
+          <!--学生绑定邮箱-->
+         <action name="stubdEmail" method="stubdEmail" class="com.begin.action.mobile.Studentregister"></action>
+</package>
+</struts>

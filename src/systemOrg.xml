@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-sysOrg" namespace="/sysOrg" extends="new-base">
+  
+     
+         <!--组织列表--> 
+        <action  name="listSysOrg" method="listSysOrg" class="com.begin.action.system.SystemOrg" >
+       <result name="success">/WEB-INF/system/sysorg/list.jsp</result>  
+       </action>
+       
+         <!--去添加页面--> 
+        <action  name="goAddOrg" method="goAddOrg" class="com.begin.action.system.SystemOrg" >
+       <result name="success">/WEB-INF/system/sysorg/edit.jsp</result>
+      </action>
+         
+         <!--新增或修改--> 
+        <action  name="createOrEditOrg" method="createOrEditOrg" class="com.begin.action.system.SystemOrg" >
+         <result type="redirectAction">
+			    <param name="actionName">listSysOrg</param>
+			    <param name="namespsce">/sysOrg</param>
+			</result>
+         </action>
+        <!--删除用户 --> 
+        <action  name="deleteOrg" method="deleteOrg" class="com.begin.action.system.SystemOrg" >
+         <result type="redirectAction">
+			    <param name="actionName">listSysOrg</param>
+			    <param name="namespsce">/sysOrg</param>
+			</result>
+         </action>
+         <!--删除所有 --> 
+        <action  name="deleteAllMenu" method="deleteAllMenu" class="com.begin.action.system.SystemOrg" >
+         <result type="redirectAction">
+			    <param name="actionName">listSysOrg</param>
+			    <param name="namespsce">/sysOrg</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getOrgID" method="getOrgID" class="com.begin.action.system.SystemOrg">
+			<result name="success">/WEB-INF/system/sysorg/edit.jsp</result>
+		</action>
+    </package>
+
+</struts>

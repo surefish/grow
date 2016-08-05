@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-sysUser" namespace="/sysUser" extends="new-base">
+  <!-- interceptor-stack是一堆拦截器组成的一个拦截器栈。也可以当拦截器使用.
+	interceptor-ref是指定某个action使用哪一个拦截器，可以是一个interceptor,也可以是一个interceptor-stack。
+		-->
+		<!-- 去登录主页 --> 
+       <action  name="login" method="login" class="com.begin.action.system.SystemUser" >
+        <result name="success">/WEB-INF/system/login.jsp</result>
+       </action>
+
+       <!-- 登录方法 --> 
+        <action  name="logining" method="logining" class="com.begin.action.system.SystemUser" >
+        <result name="success">/WEB-INF/system/index.jsp</result>
+        <result name="input">/WEB-INF/system/login.jsp</result>
+          <interceptor-ref name="auth"></interceptor-ref>
+			<interceptor-ref name="crudStack"></interceptor-ref>
+       </action>
+	    
+        <!--用户列表--> 
+        <action  name="listSysUser" method="listSysUser" class="com.begin.action.system.SystemUser" >
+       <result name="success">/WEB-INF/system/sysuser/list.jsp</result>
+       </action> 
+        <!--去添加页面--> 
+        <action  name="goAddUser" method="goAddUser" class="com.begin.action.system.SystemUser" >
+       <result name="success">/WEB-INF/system/sysuser/edit.jsp</result>
+       </action>
+       <!--去编辑页面--> 
+        <action  name="searchByname" method="searchByname" class="com.begin.action.system.SystemUser" >
+       <result name="success">/WEB-INF/system/sysuser/list.jsp</result>
+       </action>
+       <!--新增或修改用户 --> 
+        <action  name="createOrEditUser" method="createOrEditUser" class="com.begin.action.system.SystemUser" >
+         <result type="redirectAction">
+			    <param name="actionName">listSysUser</param>
+			    <param name="namespsce">/sysUser</param>
+			</result>
+         </action>
+        <!--删除用户 --> 
+        <action  name="deleteUser" method="deleteUser" class="com.begin.action.system.SystemUser" >
+         <result type="redirectAction">
+			    <param name="actionName">listSysUser</param>
+			    <param name="namespsce">/sysUser</param>
+			</result>
+         </action>
+       <!--去添加 --> 
+        <action name="getUserID" method="getUserID" class="com.begin.action.system.SystemUser">
+			<result name="success">/WEB-INF/system/sysuser/edit.jsp</result>
+		</action>
+      <!--退出 --> 
+        <action name="loginout" method="loginout" class="com.begin.action.system.SystemUser">
+			<result type="redirectAction">
+			    <param name="actionName">login</param>
+			    <param name="namespsce">/sysUser</param>
+			</result>
+		</action>
+      <!--用户列表json--> 
+        <action  name="userjson" method="userjson" class="com.begin.action.system.SystemUser" >
+       <result name="json">/WEB-INF/system/json.jsp</result>
+       </action>    
+        <!--用户列表json--> 
+        <action  name="goRoleJson" method="goRoleJson" class="com.begin.action.system.SystemUser" >
+       <result name="json">/WEB-INF/system/json.jsp</result>
+       </action>        
+    </package>
+
+</struts>

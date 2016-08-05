@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+.list {float:left;margin:5px;height:auto;padding:0px;}
+.list ul.listShow li {display:block;float:left;margin:3px;min-width:230px;min-height:23px;_height:23px;_width:expression(this.offsetWidth > 240?"100%":"240px");}
+.list ul.listShow li label {width:100px;display:block;float:left;font-weight:bold;height:25px;color:#666;padding-top:4px;text-align:right;margin-right:10px;vertical-align:center;}
+.list ul.listShow li label.needed{color:red;}
+.list ul.listShow li input[type='text']{width:125px;line-height:18px;height:18px;}
+.list ul.listShow li select{width:127px;line-height:22px;height:22px;}
+.list ul.listShow li span.liSpan{display:block;float:left;width:124px;padding-top:4px;}
+.tool-bar{
+	padding:2px;
+	height:25px;
+	background-color: #d7ebf9;
+	background: -webkit-linear-gradient(top,#EFF5FF 0,#d7ebf9 100%);
+	background: -moz-linear-gradient(top,#EFF5FF 0,#d7ebf9 100%);
+	background: -o-linear-gradient(top,#EFF5FF 0,#d7ebf9 100%);
+	background: linear-gradient(to bottom,#EFF5FF 0,#d7ebf9 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#d7ebf9,GradientType=0);
+	border-bottom:1px solid #95B8E7;
+}
+.tool-bar div{float:left;}
+.tool-bar .tool-bar-title{font-weight: bold;padding:5px 0 0 5px;text-align: center;}
+.tool-bar .tool-bar-title i{display:block;float:left;padding:0 2px;width:16px;height:16px;background:url(../images/application_view_detail.png) no-repeat;}
+.tool-bar .tool-bar-btn{float:right;padding-right:10px;}

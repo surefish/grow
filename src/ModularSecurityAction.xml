@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="new-modularSecurity" namespace="/modularSecurity" extends="new-base">
+  <!-- interceptor-stack是一堆拦截器组成的一个拦截器栈。也可以当拦截器使用.
+	interceptor-ref是指定某个action使用哪一个拦截器，可以是一个interceptor,也可以是一个interceptor-stack。
+		-->
+        <!--列表--> 
+        <action  name="listTNews" method="listTNews" class="com.begin.action.mobile.ModularSecurityAction" >
+       <result name="success">/WEB-INF/mobile/security/list.jsp</result>
+       </action> 
+        <!--去添加页面--> 
+        <action  name="goAddTNews" method="goAddTNews" class="com.begin.action.mobile.ModularSecurityAction" >
+       <result name="success">/WEB-INF/mobile/security/edit.jsp</result>
+       </action>
+       <!--搜索--> 
+        <action  name="searchByname" method="searchByname" class="com.begin.action.mobile.ModularSecurityAction" >
+       <result name="success">/WEB-INF/mobile/security/list.jsp</result>
+       </action>
+       <!--新增或修改 --> 
+        <action  name="CreateOrEditTNews" method="CreateOrEditTNews" class="com.begin.action.mobile.ModularSecurityAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTNews</param>
+			    <param name="namespsce">/modularSecurity</param>
+			</result>
+         </action>
+        <!--删除 --> 
+        <action  name="deleteTNews" method="deleteTNews" class="com.begin.action.mobile.ModularSecurityAction" >
+         <result type="redirectAction">
+			    <param name="actionName">listTNews</param>
+			    <param name="namespsce">/modularSecurity</param>
+			</result>
+         </action>
+       <!--去修改--> 
+        <action name="getTNewsID" method="getTNewsID" class="com.begin.action.mobile.ModularSecurityAction">
+			<result name="success">/WEB-INF/mobile/security/edit.jsp</result>
+		</action>
+		
+		<!--modSecurity --> 
+        <action name="modSecurity" method="modSecurity" class="com.begin.action.mobile.ModularSecurityAction">
+		</action>
+		<!--安全 -->
+        <action name="modSecurityJ" method="modSecurityJ" class="com.begin.action.mobile.MSafetyClassAction">
+		</action>
+	  <!--查看详情-->
+        <action name="modSecurityinfo" method="modSecurityinfo" class="com.begin.action.mobile.MSafetyClassAction">
+		</action>
+	  <!--健康 -->
+        <action name="modHealthyJ" method="modHealthyJ" class="com.begin.action.mobile.MSafetyClassAction">
+		</action>
+	 <!--查看详情-->
+        <action name="modHealthyinfo" method="modHealthyinfo" class="com.begin.action.mobile.MSafetyClassAction">
+		</action>
+		<!--快乐 -->
+        <action name="modHappyJ" method="modHappyJ" class="com.begin.action.mobile.MSafetyClassAction">
+		</action>
+	 <!--查看详情-->
+        <action name="modHappyinfo" method="modHappyinfo" class="com.begin.action.mobile.MSafetyClassAction">
+		</action>
+    </package>
+
+</struts>

@@ -1,0 +1,107 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+    <constant name="struts.devMode" value="true" />
+	<constant name="struts.multipart.maxSize" value="100000000000" />
+	<constant name="struts.multipart.parser" value="jakarta" />
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+	<constant name="struts.dispatcher.parametersWorkaround" value="true"/>
+	<constant name="struts.serve.static.browserCache" value="false"/>
+	 <constant name="struts.ui.theme" value="simple"></constant>
+	
+	<package name="new-base" namespace="/" extends="json-default">
+	 <interceptors>
+	            <interceptor name="auth" class="com.begin.interceptor.LoginInterceptor"/>
+	            <interceptor-stack name="crudStack">
+	                <interceptor-ref name="store">
+	                    <param name="operationMode">AUTOMATIC</param>
+	                </interceptor-ref>
+	                <!-- paramsPrepareParamsStack是拦截器的名称 -->
+	                <interceptor-ref name="paramsPrepareParamsStack"/>
+	            </interceptor-stack>
+	    </interceptors>
+        <default-interceptor-ref name="crudStack"/>
+        <!--  
+        <global-results>
+		    <result name="login" type="redirectAction">
+				<param name="actionName">login</param>
+				<param name="namespace">/sysUser</param>
+			</result>
+			<result name="error">/WEB-INF/system/error.jsp</result>
+			<result name="exception">/WEB-INF/system/error.jsp</result>
+		</global-results>
+        <global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="exception" />
+		</global-exception-mappings>
+ -->
+         <action name="checkCode" class="com.begin.action.CheckCodeAction" method="CheckCodeGenerate">
+			<result type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+				<param name="allowCaching">false</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action> 
+		
+		
+		
+	</package>
+	<!-- notFound(404)跳转页面
+   <package name="error" extends="struts-default">
+		<default-action-ref name="notFound" />
+		<action name="notFound">
+			<result>/WEB-INF/system/error.jsp</result>
+		</action>
+	</package> -->
+	<include file="user.xml"></include>
+	<include file="systemUser.xml"></include>
+	<include file="systemMenu.xml"></include>
+	<include file="systemRole.xml"></include>
+	<include file="systemOrg.xml"></include>
+	<include file="systemAction.xml"></include>
+	
+	
+	<include file="tschoolAction.xml"></include>
+	<include file="thospitalAction.xml"></include>
+	<include file="tdoctorAction.xml"></include>
+	<include file="tclassAction.xml"></include>
+	<include file="upload.xml"></include>
+	<include file="tTeacherAction.xml"></include>
+	<include file="tNewsHospitalAction.xml"></include>
+	<include file="tNewsschoolAction.xml"></include>
+	<include file="tstudentAction.xml"></include>
+	<include file="qsurverAction.xml"></include>
+	<include file="qtopicAction.xml"></include>
+	<include file="qitemAction.xml"></include>
+	<include file="tstudentsearchAction.xml"></include>
+	<include file="thealthAction.xml"></include>
+	<include file="tstudenthealthyAction.xml"></include>
+	<include file="thealthstdAction.xml"></include>
+
+
+
+	<include file="jsonAction.xml"></include>
+	<include file="MtstudentLoginAction.xml"></include>
+	<include file="MyinformationAction.xml"></include>
+	<include file="MStudentregister.xml"></include>
+	<include file="MessagesAction.xml"></include>
+	<include file="TNOtherplatformnewsAction.xml"></include>
+	<include file="TNPlatformnewsAction.xml"></include>
+	
+	<include file="ModularHappyAction.xml"></include>
+	
+    <include file="ModularSecurityAction.xml"></include>
+    
+    <include file="ModularHealthyAction.xml"></include>
+	
+	<include file="MQSurveyAction.xml"></include>
+	
+	<include file="indexAction.xml"></include>
+	
+	
+	
+</struts>
